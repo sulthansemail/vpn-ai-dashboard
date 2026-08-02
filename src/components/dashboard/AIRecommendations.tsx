@@ -1,0 +1,8 @@
+import { ArrowUpRight, Bot } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { recommendations } from "@/mock/dashboard";
+import { cn } from "@/lib/utils";
+
+const priorityStyles = { High: "bg-rose-500/10 text-rose-400", Medium: "bg-amber-500/10 text-amber-400", Low: "bg-blue-500/10 text-blue-400" };
+
+export function AIRecommendations() { return <Card className="gap-0 border-white/8 bg-[#111b2e] py-0"><CardContent className="p-5"><div className="flex items-center justify-between"><div className="flex items-center gap-2"><div className="rounded-lg bg-violet-500/10 p-2 text-violet-400"><Bot className="size-4" /></div><div><h2 className="font-semibold text-white">AI recommendations</h2><p className="text-xs text-slate-500">Prioritized by operational impact</p></div></div><span className="text-xs font-medium text-violet-400">3 new</span></div><div className="mt-5 divide-y divide-white/8">{recommendations.map((recommendation) => <div key={recommendation.title} className="py-4 first:pt-0 last:pb-0"><div className="flex items-start justify-between gap-3"><div><p className="font-medium text-slate-200">{recommendation.title}</p><p className="mt-1 text-xs leading-5 text-slate-500">{recommendation.detail}</p></div><span className={cn("shrink-0 rounded-full px-2 py-1 text-[11px] font-medium", priorityStyles[recommendation.priority])}>{recommendation.priority}</span></div><p className="mt-2 flex items-center gap-1 text-xs text-slate-400"><ArrowUpRight className="size-3 text-emerald-400" />{recommendation.impact}</p></div>)}</div></CardContent></Card>; }

@@ -1,0 +1,1 @@
+import { paymentSummary } from "@/mock/business"; import { Panel } from "./BusinessHealthCard"; export function PaymentSummary(){return <Panel title="Payment summary"><p className="mt-3 text-2xl font-semibold text-white">{paymentSummary.successful}</p><p className="mt-1 text-xs text-slate-500">Successful collections this month</p></Panel>}

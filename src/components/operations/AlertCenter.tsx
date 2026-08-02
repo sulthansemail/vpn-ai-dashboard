@@ -1,0 +1,1 @@
+import { operationAlerts } from "@/mock/operations"; export function AlertCenter(){return <div className="space-y-2">{operationAlerts.map(a=><p key={a.id} className="rounded-lg border border-white/8 p-3 text-sm text-slate-300">{a.title}<span className="float-right text-xs text-slate-500">{a.time}</span></p>)}</div>}

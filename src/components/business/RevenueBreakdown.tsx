@@ -1,0 +1,1 @@
+import { Panel } from "./BusinessHealthCard"; export function RevenueBreakdown(){return <Panel title="Revenue breakdown"><div className="mt-4 space-y-2 text-sm text-slate-300"><p className="flex justify-between">Subscriptions <b>$132.4k</b></p><p className="flex justify-between">Referrals <b>$11.7k</b></p><p className="flex justify-between">Add-ons <b>$4.5k</b></p></div></Panel>}

@@ -1,0 +1,1 @@
+import { Panel } from "./BusinessHealthCard"; export function MRRCard(){return <Panel title="MRR"><p className="mt-3 text-2xl font-semibold text-white">$52.4k</p><p className="mt-1 text-xs text-emerald-400">+8.4% monthly</p></Panel>}

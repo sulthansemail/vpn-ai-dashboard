@@ -1,0 +1,5 @@
+import { Globe2 } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { topCountries } from "@/mock/dashboard";
+
+export function TopCountries() { return <Card className="gap-0 border-white/8 bg-[#111b2e] py-0"><CardContent className="p-5"><div className="flex items-center gap-2"><div className="rounded-lg bg-blue-500/10 p-2 text-blue-400"><Globe2 className="size-4" /></div><div><h2 className="font-semibold text-white">Top countries</h2><p className="text-xs text-slate-500">Active users by market</p></div></div><div className="mt-5 space-y-4">{topCountries.map((country) => <div key={country.code}><div className="mb-1.5 flex items-center justify-between text-sm"><span className="font-medium text-slate-300">{country.country}</span><span className="text-xs text-slate-500">{country.users.toLocaleString()} · {country.share}%</span></div><div className="h-1.5 overflow-hidden rounded-full bg-white/8"><div className="h-full rounded-full bg-blue-400" style={{ width: `${country.share * 3}%` }} /></div></div>)}</div></CardContent></Card>; }

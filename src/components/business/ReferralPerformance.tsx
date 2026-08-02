@@ -1,0 +1,1 @@
+import { paymentSummary } from "@/mock/business"; import { Panel } from "./BusinessHealthCard"; export function ReferralPerformance(){return <Panel title="Referral performance"><p className="mt-3 text-2xl font-semibold text-white">{paymentSummary.referralRevenue}</p><p className="mt-1 text-xs text-emerald-400">+14.2% referred revenue</p></Panel>}

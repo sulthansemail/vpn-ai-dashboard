@@ -1,0 +1,1 @@
+import { operationTasks } from "@/mock/operations"; export function TaskQueue(){return <div className="space-y-2">{operationTasks.map(t=><p key={t.id} className="rounded-lg bg-white/5 p-3 text-sm text-slate-300"><b className="text-blue-400">{t.priority}</b> · {t.title}</p>)}</div>}

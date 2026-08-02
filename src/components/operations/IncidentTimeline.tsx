@@ -1,0 +1,1 @@
+import { operationEvents } from "@/mock/operations"; export function IncidentTimeline(){return <div className="space-y-3">{operationEvents.map(e=><div key={e.id}><p className="text-sm text-slate-200">{e.title}</p><p className="text-xs text-slate-500">{e.time} · {e.detail}</p></div>)}</div>}

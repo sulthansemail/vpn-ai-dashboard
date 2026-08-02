@@ -1,0 +1,1 @@
+import { paymentSummary } from "@/mock/business"; import { Panel } from "./BusinessHealthCard"; export function RevenueOverview(){return <Panel title="Monthly revenue"><p className="mt-3 text-3xl font-semibold text-white">{paymentSummary.successful}</p><p className="mt-1 text-xs text-emerald-400">+8.4% vs previous month</p></Panel>}

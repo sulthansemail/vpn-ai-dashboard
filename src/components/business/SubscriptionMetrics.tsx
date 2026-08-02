@@ -1,0 +1,1 @@
+import { Panel } from "./BusinessHealthCard"; export function SubscriptionMetrics(){return <Panel title="Subscription metrics"><div className="mt-3 grid grid-cols-2 gap-3 text-sm"><p className="text-slate-400">Renewal rate <b className="block text-white">92.8%</b></p><p className="text-slate-400">Churn rate <b className="block text-white">2.4%</b></p></div></Panel>}

@@ -1,0 +1,1 @@
+import { plans } from "@/mock/business"; import { Panel } from "./BusinessHealthCard"; export function TopPlansCard(){return <Panel title="Top plans"><div className="mt-4 space-y-3">{plans.map(p=><div key={p.name} className="flex justify-between text-sm"><span className="text-slate-300">{p.name}</span><span className="text-white">{p.revenue}</span></div>)}</div></Panel>}

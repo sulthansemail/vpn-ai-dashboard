@@ -1,15 +1,14 @@
 "use client";
 
+import Link from "next/link";
 import {
   BarChart3,
   Bell,
   BrainCircuit,
-  Bot,
   ChevronLeft,
   ChevronRight,
   LayoutDashboard,
   Server,
-  Settings,
   Users,
   type LucideIcon,
 } from "lucide-react";
@@ -21,26 +20,27 @@ import { cn } from "@/lib/utils";
 interface NavigationItem {
   label: string;
   icon: LucideIcon;
+  href?: string;
   isActive?: boolean;
 }
 
 const navigationItems: NavigationItem[] = [
-  { label: "Dashboard", icon: LayoutDashboard, isActive: true },
-  { label: "AI Insights", icon: BrainCircuit },
-  { label: "Servers", icon: Server },
-  { label: "Users", icon: Users },
-  { label: "Analytics", icon: BarChart3 },
-  { label: "Alerts", icon: Bell },
-  { label: "AI Assistant", icon: Bot },
+  { label: "Dashboard", icon: LayoutDashboard, href: "/", isActive: true },
+  { label: "Intelligence", icon: BrainCircuit, href: "/intelligence" },
+  { label: "Servers", icon: Server, href: "/servers" },
+  { label: "Customers", icon: Users, href: "/customers" },
+  { label: "Business", icon: BarChart3, href: "/business" },
+  { label: "Operations", icon: Bell, href: "/operations" },
 ];
 
 interface SidebarProps {
   collapsed: boolean;
   onCollapsedChange: (collapsed: boolean) => void;
   mobile?: boolean;
+  activeItem?: string;
 }
 
-export function Sidebar({ collapsed, onCollapsedChange, mobile = false }: SidebarProps) {
+export function Sidebar({ collapsed, onCollapsedChange, mobile = false, activeItem = "Dashboard" }: SidebarProps) {
   return (
     <aside
       className={cn(
@@ -66,44 +66,46 @@ export function Sidebar({ collapsed, onCollapsedChange, mobile = false }: Sideba
 
       <nav className="flex-1 space-y-1" aria-label="Primary navigation">
         {navigationItems.map((item) => (
-          <NavigationButton key={item.label} item={item} collapsed={collapsed} />
+          <NavigationButton key={item.label} item={{ ...item, isActive: item.label === activeItem }} collapsed={collapsed} />
         ))}
       </nav>
 
-      <div className="border-t border-white/8 pt-3">
-        <NavigationButton item={{ label: "Settings", icon: Settings }} collapsed={collapsed} />
-        {collapsed && !mobile && <CollapseButton collapsed={collapsed} onChange={onCollapsedChange} />}
-      </div>
+      {collapsed && !mobile && <div className="border-t border-white/8 pt-3"><CollapseButton collapsed={collapsed} onChange={onCollapsedChange} /></div>}
     </aside>
   );
 }
 
 function NavigationButton({ item, collapsed }: { item: NavigationItem; collapsed: boolean }) {
   const Icon = item.icon;
-  const button = (
-    <button
-      type="button"
+  const className = cn(
+    "flex h-10 w-full items-center rounded-lg text-sm font-medium transition-colors",
+    collapsed ? "justify-center" : "gap-3 px-3",
+    item.isActive
+      ? "bg-blue-500 text-white shadow-sm shadow-blue-950/30"
+      : "text-slate-400 hover:bg-white/5 hover:text-slate-100"
+  );
+  const content = <><Icon className="size-4 shrink-0" />{!collapsed && <span>{item.label}</span>}</>;
+  const control = item.href ? (
+    <Link
+      href={item.href}
       aria-current={item.isActive ? "page" : undefined}
-      className={cn(
-        "flex h-10 w-full items-center rounded-lg text-sm font-medium transition-colors",
-        collapsed ? "justify-center" : "gap-3 px-3",
-        item.isActive
-          ? "bg-blue-500 text-white shadow-sm shadow-blue-950/30"
-          : "text-slate-400 hover:bg-white/5 hover:text-slate-100"
-      )}
+      className={className}
     >
-      <Icon className="size-4 shrink-0" />
-      {!collapsed && <span>{item.label}</span>}
+      {content}
+    </Link>
+  ) : (
+    <button type="button" className={className}>
+      {content}
     </button>
   );
 
   return collapsed ? (
     <Tooltip>
-      <TooltipTrigger render={button} />
+      <TooltipTrigger render={control} />
       <TooltipContent side="right">{item.label}</TooltipContent>
     </Tooltip>
   ) : (
-    button
+    control
   );
 }
 

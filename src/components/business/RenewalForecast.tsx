@@ -1,0 +1,1 @@
+import { Panel } from "./BusinessHealthCard"; export function RenewalForecast(){return <Panel title="Renewal forecast"><p className="mt-3 text-2xl font-semibold text-white">$18.6k</p><p className="mt-1 text-xs text-slate-500">Expected in the next 14 days</p></Panel>}

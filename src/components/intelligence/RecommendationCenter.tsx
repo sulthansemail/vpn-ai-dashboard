@@ -1,0 +1,1 @@
+import { recommendations } from "@/mock/intelligence"; import { RecommendationCard } from "./RecommendationCard"; export function RecommendationCenter(){return <div className="space-y-3">{recommendations.map(item=><RecommendationCard key={item.id} item={item}/>)}</div>}

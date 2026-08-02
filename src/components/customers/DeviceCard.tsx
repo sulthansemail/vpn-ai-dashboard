@@ -1,0 +1,5 @@
+import { Laptop, MapPin, Smartphone } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import type { Device } from "@/mock/customers";
+
+export function DeviceCard({ device }: { device: Device }) { const Icon = device.platform === "iOS" || device.platform === "Android" ? Smartphone : Laptop; return <Card className="gap-0 border-white/8 bg-white/[0.025] py-0"><CardContent className="p-3"><div className="flex items-start justify-between"><div className="flex gap-2.5"><div className="rounded-lg bg-blue-500/10 p-2 text-blue-400"><Icon className="size-4" /></div><div><p className="text-sm font-medium text-slate-200">{device.name}</p><p className="mt-0.5 text-xs text-slate-500">{device.platform}</p></div></div>{device.isCurrent && <span className="rounded-full bg-emerald-500/10 px-2 py-1 text-[10px] font-medium text-emerald-400">Current</span>}</div><div className="mt-3 flex items-center justify-between text-xs text-slate-500"><span className="flex items-center gap-1"><MapPin className="size-3" />{device.location}</span><span>{device.lastActive}</span></div></CardContent></Card>; }

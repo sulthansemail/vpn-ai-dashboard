@@ -1,0 +1,1 @@
+import { Panel } from "./BusinessHealthCard"; export function ARRCard(){return <Panel title="ARR"><p className="mt-3 text-2xl font-semibold text-white">$628.8k</p><p className="mt-1 text-xs text-emerald-400">+9.7% projected</p></Panel>}

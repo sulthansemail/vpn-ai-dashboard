@@ -1,0 +1,1 @@
+import { predictions } from "@/mock/intelligence"; export function CapacityForecast(){return <p className="text-sm text-slate-300">Singapore capacity threshold predicted in <b>{predictions[0].value}</b>.</p>}

@@ -1,0 +1,1 @@
+import { operationEvents } from "@/mock/operations"; export function AuditLogTable(){return <div className="space-y-2">{operationEvents.map(e=><p key={e.id} className="text-sm text-slate-400">{e.category} · {e.title}</p>)}</div>}

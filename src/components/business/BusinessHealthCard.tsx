@@ -1,0 +1,3 @@
+import { Activity } from "lucide-react"; import { Card, CardContent } from "@/components/ui/card";
+export function Panel({ title, children }: { title: string; children: React.ReactNode }) { return <Card className="gap-0 border-white/8 bg-[#111b2e] py-0"><CardContent className="p-5"><p className="text-sm font-medium text-slate-400">{title}</p>{children}</CardContent></Card>; }
+export function BusinessHealthCard() { return <Panel title="Business health"><div className="mt-4 flex items-center gap-3"><Activity className="size-8 text-emerald-400" /><div><p className="text-2xl font-semibold text-white">Healthy</p><p className="text-xs text-slate-500">Revenue and renewals tracking above plan</p></div></div></Panel>; }

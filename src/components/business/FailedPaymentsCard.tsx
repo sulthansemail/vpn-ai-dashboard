@@ -1,0 +1,1 @@
+import { paymentSummary } from "@/mock/business"; import { Panel } from "./BusinessHealthCard"; export function FailedPaymentsCard(){return <Panel title="Failed payments"><p className="mt-3 text-2xl font-semibold text-amber-400">{paymentSummary.failed}</p><p className="mt-1 text-xs text-slate-500">Requires recovery follow-up</p></Panel>}

@@ -18,6 +18,7 @@ export function TopBar({ onMenuClick }: TopBarProps) {
           <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-slate-500" />
           <Input
             type="text"
+            aria-label="Search operations data"
             placeholder="Search servers, users, or AI insights..."
             className="h-9 w-full border-white/8 bg-white/5 pl-9 text-sm text-slate-200 placeholder:text-slate-500 focus-visible:ring-blue-500"
           />
@@ -32,7 +33,7 @@ export function TopBar({ onMenuClick }: TopBarProps) {
         
         <div className="mx-1 h-8 w-px bg-white/8" />
         
-        <div className="flex items-center gap-3 cursor-pointer group">
+        <button type="button" className="flex items-center gap-3 rounded-lg text-left group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
           <div className="text-right hidden md:block">
             <p className="text-sm font-medium text-slate-200 group-hover:text-white transition-colors">Admin User</p>
             <p className="text-xs text-slate-500">System Operator</p>
@@ -40,7 +41,7 @@ export function TopBar({ onMenuClick }: TopBarProps) {
           <Avatar className="h-9 w-9 border border-slate-700">
             <AvatarFallback className="bg-blue-600 text-white font-medium">AD</AvatarFallback>
           </Avatar>
-        </div>
+        </button>
       </div>
     </header>
   );

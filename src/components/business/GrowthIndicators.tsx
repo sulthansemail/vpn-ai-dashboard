@@ -1,0 +1,1 @@
+import { paymentSummary } from "@/mock/business"; import { Panel } from "./BusinessHealthCard"; export function GrowthIndicators(){return <Panel title="Growth indicators"><p className="mt-3 text-2xl font-semibold text-emerald-400">{paymentSummary.growth}</p><p className="mt-1 text-xs text-slate-500">Month-over-month MRR</p></Panel>}

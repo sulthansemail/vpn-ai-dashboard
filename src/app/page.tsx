@@ -1,79 +1,31 @@
 "use client";
 
-import { useState } from "react";
 import { DashboardHeader } from "@/components/dashboard/DashboardHeader";
-import { TopBar } from "@/components/layout/TopBar";
-import { Sidebar } from "@/components/layout/Sidebar";
+import { AIRecommendations } from "@/components/dashboard/AIRecommendations";
+import { ActivityTimeline } from "@/components/dashboard/ActivityTimeline";
+import { RecentAlerts } from "@/components/dashboard/RecentAlerts";
+import { AppShell } from "@/components/layout/AppShell";
 import { StatCard } from "@/components/dashboard/StatCard";
-import { Sheet, SheetContent } from "@/components/ui/sheet";
-import { Activity, Users, Server, HardDrive, DollarSign, AlertTriangle } from "lucide-react";
+import { TopCountries } from "@/components/dashboard/TopCountries";
+import { TrendChart } from "@/components/dashboard/TrendChart";
+import { executiveMetrics, revenueTrend, userGrowth } from "@/mock/dashboard";
 
 export default function Home() {
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-  const [mobileNavigationOpen, setMobileNavigationOpen] = useState(false);
-
   return (
-    <div className="flex min-h-screen bg-[#0d1524] font-sans text-white">
-      <Sidebar collapsed={sidebarCollapsed} onCollapsedChange={setSidebarCollapsed} />
-
-      <Sheet open={mobileNavigationOpen} onOpenChange={setMobileNavigationOpen}>
-        <SheetContent side="left" showCloseButton={false} className="w-72 border-white/8 bg-[#0b1220] p-0 sm:w-72 lg:hidden">
-          <Sidebar collapsed={false} onCollapsedChange={setSidebarCollapsed} mobile />
-        </SheetContent>
-      </Sheet>
-
-      <div className="flex min-w-0 flex-1 flex-col">
-        <TopBar onMenuClick={() => setMobileNavigationOpen(true)} />
-
-        <main className="flex-1 px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
+    <AppShell activeItem="Dashboard">
           <DashboardHeader />
 
-          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3 lg:gap-5">
-            <StatCard
-              title="System Health"
-              value="98.6%"
-              change="+0.2% from last hour"
-              trend="up"
-              icon={Activity}
-            />
-            <StatCard
-              title="Active Users"
-              value="18,542"
-              change="+4.1% today"
-              trend="up"
-              icon={Users}
-            />
-            <StatCard
-              title="Servers Online"
-              value="68"
-              change="2 under heavy load"
-              trend="alert"
-              icon={Server}
-            />
-            <StatCard
-              title="Bandwidth Used"
-              value="12.5 TB"
-              change="-1.2 TB from yesterday"
-              trend="down"
-              icon={HardDrive}
-            />
-            <StatCard
-              title="Daily Revenue"
-              value="$5,420"
-              change="+12.5% this week"
-              trend="up"
-              icon={DollarSign}
-            />
-            <StatCard
-              title="AI Alerts"
-              value="4"
-              change="Action required"
-              trend="alert"
-              icon={AlertTriangle}
-            />
-          </div>
-        </main>
-      </div>
-    </div>
+          <section className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4 lg:gap-5">
+            {executiveMetrics.map((metric) => <div key={metric.title} className="animate-in fade-in-0 slide-in-from-bottom-2 duration-300"><StatCard {...metric} /></div>)}
+          </section>
+
+          <section className="mt-5 grid grid-cols-1 gap-5 xl:grid-cols-2">
+            <TrendChart title="Revenue trend" value="$36.7k" change="+11.2% this week" data={revenueTrend} color="blue" valueFormatter={(value) => `$${(value / 1000).toFixed(1)}k`} />
+            <TrendChart title="User growth" value="19,240" change="+7.4% this week" data={userGrowth} color="violet" valueFormatter={(value) => `${Math.round(value / 1000)}k`} />
+          </section>
+
+          <section className="mt-5 grid grid-cols-1 gap-5 xl:grid-cols-2"><AIRecommendations /><RecentAlerts /></section>
+          <section className="mt-5 grid grid-cols-1 gap-5 xl:grid-cols-2"><TopCountries /><ActivityTimeline /></section>
+    </AppShell>
   );
 }

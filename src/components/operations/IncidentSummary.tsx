@@ -1,0 +1,1 @@
+import { systemStatus } from "@/mock/operations"; export function IncidentSummary(){return <div className="rounded-lg bg-rose-500/10 p-4 text-sm text-rose-300">{systemStatus.incidents} incident is currently under investigation.</div>}

@@ -1,0 +1,11 @@
+import { Search, SlidersHorizontal } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import type { Protocol, ServerStatus } from "@/types/server";
+
+export interface ServerFiltersValue { query: string; country: string; protocol: "all" | Protocol; status: "all" | ServerStatus; }
+interface ServerFiltersProps { value: ServerFiltersValue; countries: string[]; onChange: (value: ServerFiltersValue) => void; }
+const selectClass = "h-9 rounded-lg border border-white/8 bg-white/5 px-3 text-sm text-slate-300 outline-none transition focus:border-blue-500/60";
+
+export function ServerFilters({ value, countries, onChange }: ServerFiltersProps) {
+  return <div className="flex flex-col gap-3 lg:flex-row lg:items-center"><div className="relative min-w-0 flex-1"><Search className="absolute top-2.5 left-3 size-4 text-slate-500" /><Input value={value.query} onChange={(event) => onChange({ ...value, query: event.target.value })} placeholder="Search by server, city, or provider..." className="h-10 border-white/8 bg-white/5 pl-9 text-slate-200 placeholder:text-slate-500" /></div><div className="flex flex-wrap gap-2"><span className="flex items-center px-1 text-slate-500"><SlidersHorizontal className="size-4" /></span><select aria-label="Filter by country" className={selectClass} value={value.country} onChange={(event) => onChange({ ...value, country: event.target.value })}><option value="all">All countries</option>{countries.map((country) => <option key={country} value={country}>{country}</option>)}</select><select aria-label="Filter by protocol" className={selectClass} value={value.protocol} onChange={(event) => onChange({ ...value, protocol: event.target.value as ServerFiltersValue["protocol"] })}><option value="all">All protocols</option><option>WireGuard</option><option>OpenVPN</option><option>IKEv2</option></select><select aria-label="Filter by status" className={selectClass} value={value.status} onChange={(event) => onChange({ ...value, status: event.target.value as ServerFiltersValue["status"] })}><option value="all">All statuses</option><option value="online">Online</option><option value="degraded">Degraded</option><option value="maintenance">Maintenance</option><option value="offline">Offline</option></select></div></div>;
+}
