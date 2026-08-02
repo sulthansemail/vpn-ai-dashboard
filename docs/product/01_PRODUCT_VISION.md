@@ -1,89 +1,52 @@
-# VPN Operations Platform
+# Product Vision
 
-Version: 1.0
-Owner: COO
-Status: Draft
+The VPN Operations Platform is an internal operations layer built for the COO and operations teams.
 
----
+This project is not a CRM replacement. The CRM remains the transaction system of record for users, payments, subscriptions, referrals, and server inventory.
 
-# Vision
+The Operations Platform is the intelligence layer that provides:
 
-Build a centralized Operations Platform that enables the company to operate the VPN business from a single place.
+- Mission Control as the primary operations command center
+- Business intelligence and operational analytics
+- Infrastructure monitoring and incident visibility
+- AI-assisted recommendations and forecasts
+- Daily task prioritization for operations teams
 
-The CRM remains the transactional system responsible for users, subscriptions, payments, referrals, and server inventory.
+## Core question
 
-This platform becomes the operational intelligence layer responsible for monitoring infrastructure, aggregating business data, generating insights, and assisting operational decision making.
+Mission Control answers:
 
-The objective is not to replace the CRM.
+> What should Operations do today?
 
-The objective is to provide executives and operations teams with real-time visibility across the entire business.
+## Goals
 
----
+- Provide a single source of operational truth
+- Surface urgent business and infrastructure issues
+- Turn data into prioritized operational actions
+- Reduce manual switching between systems
+- Improve operational speed with advisory AI insights
 
-# Goals
+## Audience
 
-The platform should answer questions instead of displaying raw data.
+- Chief Operating Officer (COO)
+- Operations team
+- Customer support
+- Revenue operations
+- Infrastructure and engineering teams
+- Data and analytics stakeholders
 
-Examples:
+## Principles
 
-• Which servers need attention?
+- CRM owns transactions; the Operations Platform owns decisions
+- The dashboard never reads CRM data directly
+- All frontend modules consume data through a service layer
+- AI outputs are advisory and do not modify CRM records automatically
+- The platform is built for operational visibility and decision support
 
-• Which countries are growing?
+## Success metrics
 
-• Which subscriptions expire today?
-
-• Are customers experiencing connection problems?
-
-• Which infrastructure should be expanded?
-
-• What actions should Operations take today?
-
----
-
-# Users
-
-Primary User
-
-Chief Operating Officer (COO)
-
-Secondary Users
-
-Operations Team
-
-Customer Support
-
-Management
-
-Engineering
-
----
-
-# Principles
-
-Single source of operational truth
-
-Data-driven decisions
-
-AI-assisted recommendations
-
-Historical analytics
-
-Real-time monitoring
-
-Simple user experience
-
-Fast performance
-
----
-
-# Success Metrics
-
-Reduce manual operational work.
-
-Reduce time spent switching between systems.
-
-Improve response time to incidents.
-
-Identify problems before customers report them.
-
-Enable AI-driven operational recommendations.
+- Faster incident response
+- Better capacity planning
+- Improved operational visibility
+- Increased adoption of recommendations
+- Reduced manual operational effort

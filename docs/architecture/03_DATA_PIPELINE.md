@@ -1,57 +1,50 @@
 # Data Pipeline
 
-The Operations Platform aggregates data from multiple sources.
+The data pipeline describes how information moves from source systems into Mission Control.
 
-CRM
+## Flow
 
-↓
+1. CRM and external systems produce transactional and event data.
+2. The sync service ingests and normalizes the source data.
+3. Data is stored in the Operations Database.
+4. The intelligence layer processes analytics, monitoring, and AI outputs.
+5. Mission Control consumes the derived data via service-layer APIs.
 
-Sync Service
+## Pipeline components
 
-↓
+### Source systems
 
-Operations Database
+- CRM transaction system
+- Server monitoring and telemetry
+- External analytics feeds
+- Support and incident tracking
 
-↓
+### Sync service
 
-Analytics Engine
+- Fetches CRM records on a schedule
+- Validates and transforms data for the Operations Database
+- Supports delta sync and webhook-driven updates
 
-↓
+### Operations Database
 
-AI Engine
+- Stores synchronized transactional data, monitoring metrics, and AI outputs
+- Maintains historical records for trend analysis
+- Provides query-optimized views for the dashboard
 
-↓
+### Intelligence layer
 
-Mission Control Dashboard
+- Runs analytics and aggregation
+- Generates alerts and risk scores
+- Produces AI recommendations and forecasts
 
-------------------------------------------------------------
+### Presentation layer
 
-External Sources
+- Frontend routes request data through the service layer
+- Mission Control and supporting pages display derived operational insight
 
-Google Play
+## Design principles
 
-Apple App Store
-
-Support Desk
-
-Website Analytics
-
-Server Monitoring
-
-↓
-
-Operations Database
-
-------------------------------------------------------------
-
-Objectives
-
-Historical reporting
-
-AI predictions
-
-Business analytics
-
-Operational alerts
-
-Decision support
+- Keep the operations pipeline independent of the CRM.
+- Store both current state and historical trends.
+- Preserve auditability of sync and AI results.
+- Use service-layer APIs to decouple frontend from raw data sources.

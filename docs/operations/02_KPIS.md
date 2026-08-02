@@ -1,59 +1,42 @@
 # KPIs
 
-Business
+Key performance indicators are grouped by business, infrastructure, customer health, and operations.
 
-Monthly Recurring Revenue
+## Business KPIs
 
-Annual Recurring Revenue
+- Monthly Recurring Revenue (MRR)
+- Annual Recurring Revenue (ARR)
+- Daily revenue trends
+- Renewal rate
+- Churn rate
+- Lifetime value
 
-Daily Revenue
+## Infrastructure KPIs
 
-Renewal Rate
+- Server availability
+- Bandwidth utilization
+- Latency
+- Packet loss
+- Capacity headroom
+- Connected users
 
-Churn Rate
+## Customer health KPIs
 
-Lifetime Value
+- Daily active users
+- Monthly active users
+- Subscription expiration risk
+- Churn risk
+- Support case volume
+- Customer satisfaction signal
 
-------------------------------------------------------------
+## Operations KPIs
 
-Infrastructure
+- Critical alerts
+- Incident count
+- Deployment progress
+- Maintenance tasks
+- Recommendation adoption
 
-CPU Usage
+## Why these KPIs matter
 
-RAM Usage
-
-Bandwidth Usage
-
-Connected Users
-
-Server Availability
-
-Average Latency
-
-Packet Loss
-
-------------------------------------------------------------
-
-Customers
-
-Daily Active Users
-
-Monthly Active Users
-
-Crash Rate
-
-App Rating
-
-Support Resolution Time
-
-------------------------------------------------------------
-
-Operations
-
-Critical Alerts
-
-Deployments
-
-Maintenance Tasks
-
-Incident Count
+KPIs should help Mission Control answer whether the business is healthy, whether infrastructure is stable, and whether operations are taking the right actions.

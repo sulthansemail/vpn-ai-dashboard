@@ -2,19 +2,67 @@
 
 Read these files before writing code
 
-PROJECT.md
+README.md
 
-ARCHITECTURE.md
+product/01_PRODUCT_VISION.md
 
-ROADMAP.md
+product/02_BUSINESS_MODEL.md
 
-UI_GUIDELINES.md
+product/03_USERS_AND_ROLES.md
 
-CODING_STANDARDS.md
+product/04_ROADMAP.md
 
-DATABASE.md
+architecture/01_SYSTEM_OVERVIEW.md
 
-AI.md
+architecture/02_CRM_INTEGRATION.md
+
+architecture/03_OPERATIONS_DATABASE.md
+
+architecture/04_DATA_PIPELINE.md
+
+architecture/05_MONITORING_ARCHITECTURE.md
+
+architecture/06_AI_ARCHITECTURE.md
+
+architecture/07_SECURITY.md
+
+frontend/DESIGN_SYSTEM.md
+
+frontend/COMPONENT_GUIDELINES.md
+
+frontend/UI_GUIDELINES.md
+
+frontend/ROUTES.md
+
+backend/API_SPECIFICATION.md
+
+backend/DATABASE_SCHEMA.md
+
+backend/SYNC_SERVICE.md
+
+backend/MONITORING_SERVICE.md
+
+operations/MISSION_CONTROL.md
+
+operations/COO_WORKFLOW.md
+
+operations/KPIS.md
+
+crm/REQUIRED_APIS.md
+
+crm/REQUIRED_FIELDS.md
+
+crm/PENDING_ITEMS.md
+
+crm/WEBHOOKS.md
+
+adr/ADR_001_SYSTEM_ARCHITECTURE.md
+
+adr/ADR_002_FRONTEND_FIRST.md
+
+adr/ADR_003_OPERATIONS_DATABASE.md
+
+adr/ADR_004_SERVICE_LAYER.md
 
 ---
 

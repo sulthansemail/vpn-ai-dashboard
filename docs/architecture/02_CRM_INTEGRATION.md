@@ -1,149 +1,43 @@
-# CRM Integration Specification
+# CRM Integration
 
-Purpose
+The CRM is the source of truth for all transactional business data.
 
-Define the minimum data required from the CRM.
+This platform does not replace or duplicate CRM functionality.
+It consumes CRM-derived data only after it has been synchronized into the Operations Database.
 
-The CRM remains the system of record.
+## Integration boundaries
 
-The Operations Platform synchronizes data into its own database.
+- CRM owns users, subscriptions, payments, referrals, and server inventory.
+- The Operations Platform owns mission control, analytics, monitoring, and AI-derived outputs.
+- The frontend never calls CRM APIs directly.
+- The dashboard reads from the Operations Database and service layer only.
 
-Synchronization Interval
+## Data domains to synchronize
 
-Default
+- Users
+- Subscriptions
+- Payments
+- Referrals
+- Servers
+- Sessions
 
-Every 5 minutes
+## Sync model
 
-------------------------------------------------------------
+- One-way sync: CRM → Sync Service → Operations Database.
+- Use delta sync or time-based sync intervals.
+- Prefer webhooks for critical updates when available.
+- Maintain source identifiers for auditability.
 
-Dashboard
+## Design considerations
 
-Required
+- Keep CRM and Operations Database schemas separate.
+- Sync only the fields required for operational analytics.
+- Preserve historical records for trend modeling.
+- Ensure the sync service validates and transforms data consistently.
 
-Revenue
+## Reference documents
 
-Subscribers
-
-Plans
-
-Referrals
-
-Revenue by plan
-
-User growth
-
-------------------------------------------------------------
-
-Users
-
-Required Fields
-
-User ID
-
-Email
-
-Country
-
-Subscription
-
-Subscription Status
-
-Created Date
-
-Expiry Date
-
-Referral
-
-Lifetime Revenue
-
-------------------------------------------------------------
-
-Servers
-
-Required
-
-Server ID
-
-Hostname
-
-Country
-
-City
-
-Provider
-
-Protocol
-
-Status
-
-Created Date
-
-------------------------------------------------------------
-
-Sessions
-
-Required
-
-Session ID
-
-User ID
-
-Server
-
-Protocol
-
-Start Time
-
-End Time
-
-Duration
-
-Platform
-
-Country
-
-------------------------------------------------------------
-
-Payments
-
-Required
-
-Payment ID
-
-Amount
-
-Gateway
-
-Currency
-
-Status
-
-Created Time
-
-------------------------------------------------------------
-
-Referrals
-
-Required
-
-Referral Code
-
-Owner
-
-Reward
-
-Usage
-
-Revenue Generated
-
-------------------------------------------------------------
-
-Future APIs
-
-Server deployment
-
-Notifications
-
-Remote actions
-
-Webhook support
+- `docs/crm/REQUIRED_APIS.md`
+- `docs/crm/REQUIRED_FIELDS.md`
+- `docs/crm/WEBHOOKS.md`
+- `docs/backend/SYNC_SERVICE.md`

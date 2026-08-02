@@ -1,79 +1,48 @@
 # Mission Control
 
-Mission Control is the first screen opened every morning.
+Mission Control is the primary product for the COO and operations team.
 
-It answers one question.
+Its central question is:
 
-What requires my attention today?
+> What should Operations do today?
 
-------------------------------------------------------------
+## Mission Control scope
 
-Business Health
+### Business health
 
-Revenue
+- Revenue and MRR trends
+- Subscriber growth
+- Renewal performance
+- Churn and retention risk
 
-Subscribers
+### Infrastructure health
 
-MRR
+- Server health and availability
+- Capacity and bandwidth usage
+- Latency and packet loss
+- Deployment and maintenance status
 
-Renewals
+### Customer health
 
-Growth
+- Support ticket load
+- Refund and dispute signals
+- Subscription expirations
+- Churn risk indicators
 
-------------------------------------------------------------
+### AI recommendations
 
-Infrastructure
+- Capacity and scaling guidance
+- Blocked region detection
+- Churn mitigation actions
+- Revenue anomaly alerts
 
-Server Health
+### Operational actions
 
-Capacity
+- Prioritized task list
+- Recommended follow-up items
+- Execution and audit history
 
-Bandwidth
+## Workflow
 
-Latency
-
-Packet Loss
-
-Availability
-
-------------------------------------------------------------
-
-Customers
-
-Support Tickets
-
-Refund Requests
-
-Reviews
-
-Subscriptions Expiring
-
-------------------------------------------------------------
-
-AI Recommendations
-
-Deploy additional servers
-
-Investigate blocked locations
-
-Upgrade infrastructure
-
-Customer churn warning
-
-Revenue anomaly detection
-
-------------------------------------------------------------
-
-Daily Actions
-
-Mission Control should finish with a prioritized task list.
-
-Example
-
-Deploy Singapore server
-
-Renew Germany server
-
-Review payment failures
-
-Reply to App Store reviews
+Mission Control should provide a clear, prioritized plan.
+The first action in the day should be based on business risk, infrastructure risk, and AI recommendations.

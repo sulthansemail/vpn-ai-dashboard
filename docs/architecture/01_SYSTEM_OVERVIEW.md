@@ -1,95 +1,60 @@
 # System Overview
 
-The Operations Platform consists of five logical layers.
+The VPN Operations Platform is an internal business operations stack with a strict separation from the CRM.
 
-------------------------------------------------------------
+## Architecture
 
-Layer 1
+The system is organized as:
 
-Business Systems
-
+```
 CRM
-
-Payment Gateway
-
-Website
-
-Support Platform
-
-------------------------------------------------------------
-
-Layer 2
-
-Synchronization Layer
-
-CRM Sync Service
-
-Payment Sync
-
-Support Sync
-
-Store Sync
-
-------------------------------------------------------------
-
-Layer 3
-
+ │
+ │
+Sync Service
+ │
+ ▼
 Operations Database
+ │
+ ┌────────┬─────────┐
+ │        │         │
+Monitoring Analytics AI
+ │        │         │
+ └────────┴─────────┘
+          │
+          ▼
+ Mission Control Dashboard
+```
 
-Stores all synchronized business data.
+## Layers
 
-Stores monitoring data.
+### 1. CRM and transactional systems
 
-Stores AI outputs.
+- CRM remains the source of truth for transactions.
+- Requires data for users, subscriptions, payments, referrals, and servers.
 
-Optimized for dashboards.
+### 2. Sync Service
 
-------------------------------------------------------------
+- Moves data from CRM to the Operations Database.
+- Enforces one-way sync and data validation.
 
-Layer 4
+### 3. Operations Database
 
-Intelligence Layer
+- Stores synchronized CRM records, telemetry, alerts, and AI outputs.
+- Optimized for analytics, historical queries, and dashboard reads.
 
-Analytics Engine
+### 4. Intelligence layer
 
-Monitoring Engine
+- Includes analytics, monitoring, alerting, and AI recommendation engines.
+- Produces advisory outputs for Mission Control.
 
-AI Engine
+### 5. Presentation layer
 
-Recommendation Engine
+- Mission Control dashboard and supporting frontend modules.
+- Consumes only service-layer APIs.
 
-Alert Engine
+## Principles
 
-------------------------------------------------------------
-
-Layer 5
-
-Presentation Layer
-
-Mission Control Dashboard
-
-Infrastructure
-
-Users
-
-Business
-
-Analytics
-
-Operations
-
-AI Center
-
-------------------------------------------------------------
-
-Principles
-
-CRM owns transactions.
-
-Operations Platform owns intelligence.
-
-Monitoring is independent.
-
-AI never modifies CRM records.
-
-All recommendations are advisory unless explicitly approved.
+- CRM owns transactions; Operations Platform owns decisions.
+- The dashboard never communicates directly with CRM.
+- All frontend modules consume data through the service layer.
+- AI outputs are advisory, not automatic CRM updates.

@@ -3,13 +3,37 @@ You are the lead frontend engineer for this project.
 Before making ANY changes, read and understand these documents:
 
 - AGENTS.md
-- docs/PROJECT.md
-- docs/ARCHITECTURE.md
-- docs/ROADMAP.md
-- docs/UI_GUIDELINES.md
-- docs/CODING_STANDARDS.md
-- docs/DATABASE.md
-- docs/AI.md
+- docs/README.md
+- docs/product/01_PRODUCT_VISION.md
+- docs/product/02_BUSINESS_MODEL.md
+- docs/product/03_USERS_AND_ROLES.md
+- docs/product/04_ROADMAP.md
+- docs/architecture/01_SYSTEM_OVERVIEW.md
+- docs/architecture/02_CRM_INTEGRATION.md
+- docs/architecture/03_OPERATIONS_DATABASE.md
+- docs/architecture/04_DATA_PIPELINE.md
+- docs/architecture/05_MONITORING_ARCHITECTURE.md
+- docs/architecture/06_AI_ARCHITECTURE.md
+- docs/architecture/07_SECURITY.md
+- docs/frontend/DESIGN_SYSTEM.md
+- docs/frontend/COMPONENT_GUIDELINES.md
+- docs/frontend/UI_GUIDELINES.md
+- docs/frontend/ROUTES.md
+- docs/backend/API_SPECIFICATION.md
+- docs/backend/DATABASE_SCHEMA.md
+- docs/backend/SYNC_SERVICE.md
+- docs/backend/MONITORING_SERVICE.md
+- docs/operations/MISSION_CONTROL.md
+- docs/operations/COO_WORKFLOW.md
+- docs/operations/KPIS.md
+- docs/crm/REQUIRED_APIS.md
+- docs/crm/REQUIRED_FIELDS.md
+- docs/crm/PENDING_ITEMS.md
+- docs/crm/WEBHOOKS.md
+- docs/adr/ADR_001_SYSTEM_ARCHITECTURE.md
+- docs/adr/ADR_002_FRONTEND_FIRST.md
+- docs/adr/ADR_003_OPERATIONS_DATABASE.md
+- docs/adr/ADR_004_SERVICE_LAYER.md
 
 If additional documentation exists inside docs/architecture, docs/operations, docs/product or docs/development, read those as well before writing code.
 
