@@ -1,36 +1,169 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VPN AI Operations Center
 
-## Getting Started
+Enterprise AI-powered VPN management platform built with Next.js, FastAPI, PostgreSQL, and AI.
 
-First, run the development server:
+---
+
+## Vision
+
+The VPN AI Operations Center is a next-generation dashboard for VPN providers that combines infrastructure management, analytics, and artificial intelligence into a single platform.
+
+The platform helps administrators:
+
+- Monitor VPN servers
+- Manage users and subscriptions
+- Analyze network performance
+- Detect blocked servers
+- Forecast capacity
+- Receive AI-powered recommendations
+- Automate VPN operations
+
+---
+
+# Tech Stack
+
+## Frontend
+
+- Next.js 16
+- TypeScript
+- Tailwind CSS v4
+- shadcn/ui
+- React Query
+- Zustand
+- Framer Motion
+- Recharts
+
+## Backend (Planned)
+
+- FastAPI
+- PostgreSQL
+- Redis
+- WebSockets
+
+## AI (Planned)
+
+- OpenAI
+- XGBoost
+- Prophet
+- Isolation Forest
+
+---
+
+# Project Structure
+
+```
+src/
+├── app/
+├── components/
+│   ├── layout/
+│   ├── dashboard/
+│   ├── charts/
+│   ├── ai/
+│   ├── tables/
+│   └── ui/
+├── hooks/
+├── lib/
+├── services/
+├── store/
+└── types/
+```
+
+---
+
+# Current Status
+
+🚧 Phase 1 — Dashboard UI
+
+Current goals:
+
+- Dashboard Layout
+- Sidebar
+- Top Navigation
+- KPI Cards
+- Charts
+- AI Recommendation Panel
+- Alerts
+- Responsive Design
+
+Mock data only.
+
+---
+
+# Roadmap
+
+## Phase 1
+
+- Dashboard
+- Layout
+- KPI Cards
+- Charts
+
+## Phase 2
+
+- Server Management
+- Users
+- Analytics
+- Alerts
+
+## Phase 3
+
+- AI Insights
+- AI Assistant
+- Capacity Forecasting
+
+## Phase 4
+
+- Backend APIs
+- PostgreSQL
+- Redis
+- Authentication
+
+## Phase 5
+
+- AI Prediction Engine
+- Server Health
+- Churn Prediction
+- Fraud Detection
+
+---
+
+# Development
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+# Documentation
 
-To learn more about Next.js, take a look at the following resources:
+See the `docs/` directory for:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- PROJECT.md
+- ARCHITECTURE.md
+- ROADMAP.md
+- DATABASE.md
+- AI.md
+- CODING_STANDARDS.md
+- UI_GUIDELINES.md
+- PROMPTS.md
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+# License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Private Project.
